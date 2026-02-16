@@ -3,114 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qis | Premium Software Solutions</title>
+    <title>Balqis | Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">qis<span>.Dev</span></div>
+        <div class="logo">&lt;qis /&gt;</div>
         <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#freelance-portfolio">Client Work</a></li>
-            <li><a href="#student-portfolio">Academic Projects</a></li>
-            <li><a href="#contact" class="btn-small">Get in Touch</a></li>
+            <li><a href="#freelance">./freelance</a></li>
+            <li><a href="#academic">./school-projects</a></li>
+            <li><a href="#contact" class="btn-small">run_contact()</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <div class="hero-content fade-in">
-            <h1>Scalable Web Solutions by <span>Qis</span></h1>
-            <p>Freelance Software Developer specializing in Enterprise Java, Custom Web Apps, and Business Intelligence Analytics.</p>
-            <div class="hero-btns">
-                <a href="#freelance-portfolio" class="btn">Explore My Work</a>
-                <a href="#contact" class="btn-outline">Hire Me</a>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="mac-btns">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+                <div class="terminal-title">guest@qis-portfolio: ~</div>
+            </div>
+            <div class="terminal-body">
+                <p class="code-comment">// Welcome to my digital workspace</p>
+                <h1>Hi there, I'm Balqis.</h1>
+                <h2>I design and build websites that are friendly and easy to use.</h2>
+                <p class="hero-desc">
+                    <span class="prompt">&gt;</span> I'm a degree student who loves turning good ideas into beautiful, working websites. Whether it's a campus project or a client's request, I focus on making things simple and helpful.
+                </p>
+                <div class="hero-btns">
+                    <a href="#freelance" class="btn-main">_see_my_work</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="section">
-        <h2 class="section-title">Premium Services</h2>
+    <section id="freelance" class="section">
+        <div class="section-title-area">
+            <h2 class="section-title"><span class="code-keyword">const</span> freelance = [</h2>
+            <p class="code-comment">/* Work I've done for real clients */</p>
+        </div>
+        
         <div class="grid">
-            <div class="service-card glass">
-                <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
-                <h3>Web Development</h3>
-                <p>Customized Java-based web applications tailored to enhance your business workflow and drive growth.</p>
-            </div>
-            <div class="service-card glass">
-                <div class="icon-wrapper"><i class="fas fa-server"></i></div>
-                <h3>Database Solutions</h3>
-                <p>Optimized MySQL database design, migration, and secure data management for enterprise systems.</p>
-            </div>
-            <div class="service-card glass">
-                <div class="icon-wrapper"><i class="fas fa-chart-pie"></i></div>
-                <h3>Data Analytics</h3>
-                <p>Transforming raw business data into actionable insights using advanced diagnostic tools.</p>
+            <div class="project-card">
+                <div class="image-box">
+                    <img src="assets/images/wedding1.png" alt="Digital Wedding Invitation">
+                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="hover-btn">View Website</a>
+                </div>
+                <div class="text-box">
+                    <h3>Digital Wedding Platform</h3>
+                    <p>A beautiful digital wedding invitation that clients can easily change and share with their guests.</p>
+                    <div class="tools-used">
+                        <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                    </div>
+                </div>
             </div>
         </div>
+        <h2 class="section-title closing-bracket">];</h2>
     </section>
 
-    <section id="freelance-portfolio" class="section">
-        <h2 class="section-title">Freelance Projects</h2>
+    <section id="academic" class="section">
+        <div class="section-title-area">
+            <h2 class="section-title"><span class="code-keyword">const</span> school_projects = [</h2>
+            <p class="code-comment">/* Things I've built during my degree studies */</p>
+        </div>
+        
         <div class="grid">
-            <div class="project-card glass">
-                <div class="project-img gradient-1">
-                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" style="color: white; text-decoration: none;">View Live Project <i class="fas fa-external-link-alt"></i></a>
+            <div class="project-card">
+                <div class="image-box">
+                    <img src="assets/images/sapujerr.png" alt="SapuJerr System">
                 </div>
-                <div class="project-info">
-                    <h4>Digital Wedding Platform</h4>
-                    <p>A beautifully designed, interactive digital invitation platform available for client customization.</p>
-                    <div class="tags"><span class="tag">HTML5</span> <span class="tag">CSS3</span> <span class="tag">JavaScript</span></div>
-                </div>
-            </div>
-             </div>
-    </section>
-
-    <section id="student-portfolio" class="section">
-        <h2 class="section-title">Academic & Concept Projects</h2>
-        <div class="grid">
-            <div class="project-card glass">
-                <div class="project-img gradient-2"><i class="fas fa-car side-icon"></i></div>
-                <div class="project-info">
-                    <h4>SapuJerr E-Hailing</h4>
-                    <p>A localized transport management system engineered to connect campus students with drivers seamlessly.</p>
-                    <div class="tags"><span class="tag">JSP</span> <span class="tag">JavaBean</span> <span class="tag">MySQL</span></div>
-                </div>
-            </div>
-
-            <div class="project-card glass">
-                <div class="project-img gradient-3">
-                    <a href="https://cafebunga-production.up.railway.app/" target="_blank" style="color: white; text-decoration: none;">                        <i class="fas fa-coffee side-icon"></i>
-                        <p style="font-size: 0.8rem; margin-top: 5px;">Live Demo <i class="fas fa-external-link-alt"></i></p>
-                    </a>
-                </div>
-                <div class="project-info">
-                    <h4>Cafe Bunga System</h4>
-                    <p>A digital platform to manage daily cafe operations, improving order efficiency and customer experience.</p>
-                    <div class="tags">
-                        <span class="tag">PHP</span> 
-                        <span class="tag">MySQL</span> 
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">XAMPP</span>
+                <div class="text-box">
+                    <h3>SapuJerr (Campus Ride App)</h3>
+                    <p>A system to help students find rides around campus. My main job was figuring out what the student portal needed to do and planning it out.</p>
+                    <div class="tools-used">
+                        <span>JSP</span> <span>JavaBean</span> <span>MySQL</span>
                     </div>
                 </div>
             </div>
 
+            <div class="project-card">
+                <div class="image-box">
+                    <img src="assets/images/cafeBunga.png" alt="Cafe Bunga">
+                    <a href="https://cafebunga-production.up.railway.app/" target="_blank" class="hover-btn">View Website</a>
+                </div>
+                <div class="text-box">
+                    <h3>Cafe Bunga Ordering System</h3>
+                    <p>A website created to help a cafe take orders smoothly and manage their daily business without the stress.</p>
+                    <div class="tools-used">
+                        <span>PHP</span> <span>MySQL</span> <span>XAMPP</span>
+                    </div>
+                </div>
+            </div>
         </div>
+        <h2 class="section-title closing-bracket">];</h2>
     </section>
 
     <section id="contact" class="section">
-        <div class="contact-box glass">
-            <h2>Ready to Elevate Your Business?</h2>
-            <p>I am currently accepting new freelance projects. Let's build something extraordinary together.</p>
-            <a href="mailto:syfqhblqs04@gmail.com" class="btn btn-large"><i class="fas fa-envelope"></i> syfqhblqs04@gmail.com</a>
+        <div class="contact-box terminal-window">
+            <div class="terminal-header">
+                <div class="mac-btns">
+                    <span class="close"></span>
+                    <span class="minimize"></span>
+                    <span class="maximize"></span>
+                </div>
+                <div class="terminal-title">contact.sh</div>
+            </div>
+            <div class="terminal-body contact-body">
+                <h2>Let's work together!</h2>
+                <p>I'm currently taking on new projects. If you need a website or just want to chat, send me an email.</p>
+                <br>
+                <p><span class="prompt">$</span> <a href="mailto:syfqhblqs04@gmail.com" class="email-link">mail -s "Hello" syfqhblqs04@gmail.com <span class="cursor-blink">_</span></a></p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Qis Digital Solutions | Built with Precision</p>
+        <p>&copy; 2026 Portfolio by Qis. <span class="code-comment">// Built with care</span></p>
     </footer>
 
 </body>
