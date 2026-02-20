@@ -3,128 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balqis | Developer Portfolio</title>
+    <title>Qis Logic | Web Developer & Analyst</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">&lt;qis /&gt;</div>
+        <a href="#" class="logo">Qis<span>Logic.</span></a>
         <ul class="nav-links">
-            <li><a href="#freelance">./freelance</a></li>
-            <li><a href="#academic">./school-projects</a></li>
-            <li><a href="#contact" class="btn-small">run_contact()</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact" class="btn btn-outline" style="padding: 0.5rem 1.2rem;">Let's Talk</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <div class="mac-btns">
-                    <span class="close"></span>
-                    <span class="minimize"></span>
-                    <span class="maximize"></span>
-                </div>
-                <div class="terminal-title">guest@qis-portfolio: ~</div>
-            </div>
-            <div class="terminal-body">
-                <p class="code-comment">// Welcome to my digital workspace</p>
-                <h1>Hi there, I'm Balqis.</h1>
-                <h2>I design and build websites that are friendly and easy to use.</h2>
-                <p class="hero-desc">
-                    <span class="prompt">&gt;</span> I'm a degree student who loves turning good ideas into beautiful, working websites. Whether it's a campus project or a client's request, I focus on making things simple and helpful.
-                </p>
-                <div class="hero-btns">
-                    <a href="#freelance" class="btn-main">_see_my_work</a>
-                </div>
-            </div>
+        <h1>Designing logic.<br>Building <span>experiences.</span></h1>
+        <p>Hi, I'm Balqis. I specialize in software requirements analysis and full-stack web development, turning complex problems into intuitive, user-friendly digital solutions.</p>
+        <div style="display: flex; gap: 1rem;">
+            <a href="#projects" class="btn btn-primary">See My Work</a>
         </div>
     </header>
 
-    <section id="freelance" class="section">
-        <div class="section-title-area">
-            <h2 class="section-title"><span class="code-keyword">const</span> freelance = [</h2>
-            <p class="code-comment">/* Work I've done for real clients */</p>
-        </div>
+    <section id="projects" class="section">
+        <h2 class="section-title">Selected Projects</h2>
         
         <div class="grid">
-            <div class="project-card">
-                <div class="image-box">
-                    <img src="assets/images/wedding1.png" alt="Digital Wedding Invitation">
-                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="hover-btn">View Website</a>
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/wedding1.png" alt="Digital Wedding Invitation Preview">
                 </div>
-                <div class="text-box">
+                <div class="card-content">
                     <h3>Digital Wedding Platform</h3>
-                    <p>A beautiful digital wedding invitation that clients can easily change and share with their guests.</p>
-                    <div class="tools-used">
-                        <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+                    <p>A beautifully crafted, responsive digital wedding invitation platform. Designed to be elegant and easily customizable for clients to share with their guests.</p>
+                    <div class="tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Freelance</span>
                     </div>
+                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="card-link">View Live Project &rarr;</a>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/sapujerr.png" alt="SapuJerr System Preview">
+                </div>
+                <div class="card-content">
+                    <h3>SapuJerr E-Hailing</h3>
+                    <p>A campus e-hailing web application. As the Software Requirement Analyst, I engineered the student portal requirements to ensure a seamless booking experience.</p>
+                    <div class="tags">
+                        <span>JSP / Jakarta EE</span>
+                        <span>MySQL</span>
+                        <span>UI/UX Analysis</span>
+                    </div>
+                    <a href="#" class="card-link">Read Case Study &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">
+                    <img src="assets/images/cafeBunga.png" alt="Cafe Bunga Preview">
+                </div>
+                <div class="card-content">
+                    <h3>Cafe Bunga Management</h3>
+                    <p>An end-to-end cafe ordering and management system. Features include secure user registration, real-time order tracking, and a streamlined database backend.</p>
+                    <div class="tags">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>XAMPP</span>
+                    </div>
+                    <a href="cafebunga-production-2b8e.up.railway.app" target="_blank" class="card-link">View Live Project &rarr;</a>
+                </div>
+            </div>
+
         </div>
-        <h2 class="section-title closing-bracket">];</h2>
     </section>
 
-    <section id="academic" class="section">
-        <div class="section-title-area">
-            <h2 class="section-title"><span class="code-keyword">const</span> school_projects = [</h2>
-            <p class="code-comment">/* Things I've built during my degree studies */</p>
-        </div>
-        
-        <div class="grid">
-            <div class="project-card">
-                <div class="image-box">
-                    <img src="assets/images/sapujerr.png" alt="SapuJerr System">
-                </div>
-                <div class="text-box">
-                    <h3>SapuJerr (Campus Ride App)</h3>
-                    <p>A system to help students find rides around campus. My main job was figuring out what the student portal needed to do and planning it out.</p>
-                    <div class="tools-used">
-                        <span>JSP</span> <span>JavaBean</span> <span>MySQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="image-box">
-                    <img src="assets/images/cafeBunga.png" alt="Cafe Bunga">
-                    <a href="https://cafebunga-production.up.railway.app/" target="_blank" class="hover-btn">View Website</a>
-                </div>
-                <div class="text-box">
-                    <h3>Cafe Bunga Ordering System</h3>
-                    <p>A website created to help a cafe take orders smoothly and manage their daily business without the stress.</p>
-                    <div class="tools-used">
-                        <span>PHP</span> <span>MySQL</span> <span>XAMPP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2 class="section-title closing-bracket">];</h2>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="contact-box terminal-window">
-            <div class="terminal-header">
-                <div class="mac-btns">
-                    <span class="close"></span>
-                    <span class="minimize"></span>
-                    <span class="maximize"></span>
-                </div>
-                <div class="terminal-title">contact.sh</div>
-            </div>
-            <div class="terminal-body contact-body">
-                <h2>Let's work together!</h2>
-                <p>I'm currently taking on new projects. If you need a website or just want to chat, send me an email.</p>
-                <br>
-                <p><span class="prompt">$</span> <a href="mailto:syfqhblqs04@gmail.com" class="email-link">mail -s "Hello" syfqhblqs04@gmail.com <span class="cursor-blink">_</span></a></p>
-            </div>
+    <section id="contact" class="section" style="padding-top: 0;">
+        <div class="contact-area">
+            <h2>Have a project in mind?</h2>
+            <p>Whether it's a freelance web project or discussing software testing strategies, my inbox is always open.</p>
+            <a href="mailto:syfqhblqs04@gmail.com" class="btn btn-primary">Say Hello</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Portfolio by Qis. <span class="code-comment">// Built with care</span></p>
+        <p>&copy; 2026 Qis Logic. Crafted by Balqis.</p>
     </footer>
 
 </body>
