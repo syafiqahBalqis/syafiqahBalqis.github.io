@@ -3,89 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balqis | Portfolio</title>
+    <title>Qis Logic | Portfolio Proposal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#" class="logo">Qis Logic.</a>
-        <ul class="nav-links">
-            <li><a href="#freelance">Freelance</a></li>
-            <li><a href="#academic">Academic</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="navbar-wrapper">
+        <nav class="navbar">
+            <a href="#" class="logo">Qis Logic.</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="nav-links">
+                <li><a href="#freelance">Freelance</a></li>
+                <li><a href="#academic">Academic</a></li>
+                <li><a href="#contact" class="btn-primary" style="padding: 0.6rem 1.5rem; color: white;">Say Hi!</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <header class="hero">
-        <h1>Designing logic.<br>Building <span>beauty.</span></h1>
-        <p>Hi, I'm Balqis. A degree student, developer, and requirement analyst focused on creating clean, intuitive, and aesthetic web experiences.</p>
+        <div class="hero-pill">Portfolio Proposal 2026</div>
+        <h1>Designing Logic.<br>Building Beauty.</h1>
+        <p>Hi, I'm Balqis! A passionate developer and requirement analyst creating bright, user-friendly digital experiences with a touch of aesthetic magic.</p>
         <a href="#freelance" class="btn btn-primary">Explore My Work</a>
     </header>
 
     <section id="freelance" class="section">
         <div class="section-header">
             <h2 class="section-title">Independent Work</h2>
-            <p class="section-subtitle">Freelance projects and personal creations.</p>
+            <p class="section-subtitle">Client projects & freelance creations.</p>
         </div>
         
         <div class="grid">
             <div class="card">
                 <div class="card-img">
-                    <img src="assets/images/wedding1.png" alt="Digital Wedding Invitation Preview">
+                    <img src="assets/images/wedding1.png" alt="Wedding Template">
                 </div>
                 <div class="card-content">
                     <h3>Digital Wedding Platform</h3>
-                    <p>A beautifully crafted digital wedding invitation template. Designed to be elegant, responsive, and easily customizable for modern couples to share with their guests.</p>
+                    <p>A beautifully crafted, bubbly, and responsive digital invitation platform tailored for modern couples.</p>
                     <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
+                        <span>HTML & CSS</span>
                         <span>JavaScript</span>
                         <span>Freelance</span>
                     </div>
-                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="card-link">View Website &rarr;</a>
+                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="card-link">View Live Site ✨</a>
                 </div>
             </div>
             
+            <div class="card" style="border: 4px dashed var(--sage); background: transparent; box-shadow: none; align-items: center; justify-content: center; text-align: center;">
+                <div class="card-content">
+                    <h3 style="color: var(--sage);">More Project</h3>
+                    <p>Ready to build something cute and highly functional together!</p>
+                </div>
             </div>
+        </div>
     </section>
 
     <section id="academic" class="section">
         <div class="section-header">
-            <h2 class="section-title">Academic Endeavors</h2>
-            <p class="section-subtitle">Systems and applications developed during my degree studies.</p>
+            <h2 class="section-title">Academic Projects</h2>
+            <p class="section-subtitle">Systems developed during my degree studies.</p>
         </div>
         
         <div class="grid">
             <div class="card">
                 <div class="card-img">
-                    <img src="assets/images/sapujerr.png" alt="SapuJerr System Preview">
+                    <img src="assets/images/sapujerr.png" alt="SapuJerr System">
                 </div>
                 <div class="card-content">
                     <h3>SapuJerr E-Hailing</h3>
-                    <p>A campus e-hailing web application. I served as the Software Requirement Analyst, engineering the student portal specifications to ensure a seamless booking experience.</p>
+                    <p>Campus e-hailing system. I engineered the student portal requirements to ensure a smooth, intuitive booking flow.</p>
                     <div class="tags">
-                        <span>JSP / Jakarta EE</span>
+                        <span>JSP & Java</span>
                         <span>MySQL</span>
-                        <span>Requirement Analysis</span>
+                        <span>Requirements</span>
                     </div>
-                    <a href="#" class="card-link">View Details &rarr;</a>
+                    <a href="#" class="card-link">View Project ✨</a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-img">
-                    <img src="assets/images/cafeBunga.png" alt="Cafe Bunga Preview">
+                    <img src="assets/images/cafeBunga.png" alt="Cafe Bunga">
                 </div>
                 <div class="card-content">
                     <h3>Cafe Bunga Management</h3>
-                    <p>An end-to-end cafe ordering and management system featuring secure user registration, real-time order tracking, and a streamlined database backend.</p>
+                    <p>An aesthetic, end-to-end cafe ordering system featuring secure logins and real-time database management.</p>
                     <div class="tags">
                         <span>PHP</span>
                         <span>MySQL</span>
                         <span>XAMPP</span>
                     </div>
-                    <a href="cafebunga-production-2b8e.up.railway.app" target="_blank" class="card-link">View Live Project &rarr;</a>
+                    <a href="cafebunga-production-2b8e.up.railway.app" target="_blank" class="card-link">View Live Site ✨</a>
                 </div>
             </div>
         </div>
@@ -93,14 +109,14 @@
 
     <section id="contact" class="section">
         <div class="contact-area">
-            <h2>Let's create something beautiful.</h2>
-            <p>I'm currently open for new freelance projects and collaborations. If you need a website or just want to connect, my inbox is open.</p>
-            <a href="mailto:syfqhblqs04@gmail.com" class="btn btn-white">Send an Email</a>
+            <h2>Let's create together!</h2>
+            <p>I'm ready for new freelance projects and collaborations. If you need a website that looks as good as it works, let's chat!</p>
+            <a href="mailto:syfqhblqs04@gmail.com" class="btn-cream">Send an Email 💌</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Qis Logic. Designed with purpose by Balqis.</p>
+        <p>&copy; 2026 Qis Dev. Coded with ❤️ by Balqis.</p>
     </footer>
 
 </body>
