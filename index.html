@@ -593,18 +593,6 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-subtitle">System Analysis</span>
-                        <h3>SmartER System</h3>
-                    </div>
-                    <p>Authored a comprehensive, short, and easy-to-understand emergency room triage report detailing the system architecture and logic flow for the SmartER system framework.</p>
-                    <div class="tags">
-                        <span class="tag">System Architecture</span>
-                        <span class="tag">Technical Writing</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
                         <span class="card-subtitle">Business System Spec</span>
                         <h3>JJE Auto Website</h3>
                     </div>
@@ -612,6 +600,9 @@
                     <div class="tags">
                         <span class="tag">Business Analysis</span>
                         <span class="tag">System Spec</span>
+                    </div>
+                    <div class="card-actions">
+                        <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
                     </div>
                 </div>
 
@@ -661,6 +652,8 @@
                 <video id="demoPlayer" controls poster="assets/placeholder.jpg">
                     <source src="assets/demo-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
+                    <!-- KALAU GUNA YOUTUBE -->
+                    <!--<iframe id="demoPlayer" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe> -->
                 </video>
             </div>
         </div>
@@ -695,13 +688,23 @@
             'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'assets/videos/emocare-demo.mp4' }
         };
 
+        /* // Put your actual YouTube Embed links here
+        const videoData = {
+            'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
+            'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
+            'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
+            'traffic-demo': { title: 'Smart V2I Traffic Signal Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
+            'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
+            'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' }
+        }; */
+
         function openModal(projectId) {
             if(videoData[projectId]) {
                 modalTitle.innerText = videoData[projectId].title;
-                // videoPlayer.src = videoData[projectId].src; 
+                videoPlayer.src = videoData[projectId].src; // <-- REMOVE THE // FROM THIS LINE
             }
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Stop background scrolling
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeModal(e) {
