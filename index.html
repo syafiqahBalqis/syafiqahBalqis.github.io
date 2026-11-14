@@ -648,12 +648,8 @@
             <p style="font-size: 0.95rem; color: var(--rust-orange); font-weight: 600; margin-bottom: 1rem;">Watch the system in action.</p>
             
             <div class="video-container">
-                <video id="demoPlayer" controls poster="assets/placeholder.jpg">
-                    <source src="assets/demo-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                    <!-- KALAU GUNA YOUTUBE -->
-                    <!--<iframe id="demoPlayer" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe> -->
-                </video>
+                <!-- Use an iframe for BOTH local videos and YouTube videos -->
+                <iframe id="demoPlayer" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe> 
             </div>
         </div>
     </div>
@@ -679,28 +675,21 @@
         const videoPlayer = document.getElementById('demoPlayer');
 
         const videoData = {
-            //'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'assets/videos/wedding-demo.mp4' },
-            //'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'assets/videos/sapujerr-demo.mp4' },
-            //'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'assets/videos/cafebunga-demo.mp4' },
+            // Local MP4 Examples
+            'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'assets/videos/wedding-demo.mp4' },
+            'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'assets/videos/sapujerr-demo.mp4' },
+            'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'assets/videos/cafebunga-demo.mp4' },
             'traffic-demo': { title: 'Smart V2I Traffic Signal Management System Demo', src: 'assets/videos/traffic-demo.mp4' },
-            'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'assets/videos/taukebot-demo.mp4' },
+            
+            // YouTube Example (Notice the /embed/ URL format!)
+            'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'https://www.youtube.com/embed/E0EMJjinqAg' },
             'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'assets/videos/emocare-demo.mp4' }
-        };
-
-        /* // Put your actual YouTube Embed links here
-        const videoData = {
-            'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
-            'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
-            'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
-            'traffic-demo': { title: 'Smart V2I Traffic Signal Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
-            'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' },
-            'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'https://www.youtube.com/embed/YOUR_VIDEO_ID' }
-        }; */
+        }; 
 
         function openModal(projectId) {
             if(videoData[projectId]) {
                 modalTitle.innerText = videoData[projectId].title;
-                videoPlayer.src = videoData[projectId].src; // <-- REMOVE THE // FROM THIS LINE
+                videoPlayer.src = videoData[projectId].src;
             }
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; 
@@ -710,7 +699,8 @@
             if (e) e.preventDefault();
             modal.classList.remove('active');
             document.body.style.overflow = '';
-            videoPlayer.pause(); // Stop playing when closed
+            // For iframes, clearing the src is how you stop the video from playing in the background
+            videoPlayer.src = ''; 
         }
 
         // Close modal on Escape key
