@@ -3,124 +3,698 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niskara. | Portfolio Proposal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Niskara. | Nur Syafiqah Balqis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Custom Palette */
+            --dark-green: #09251C;
+            --rust-orange: #A55704;
+            --light-peach: #F3D2AF;
+            --cream-bg: #F8EADC;
+            --white: #FFFFFF;
+            
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream-bg);
+            color: var(--dark-green);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Solid Navigation */
+        .nav-wrapper {
+            position: sticky;
+            top: 1rem;
+            z-index: 1000;
+            margin-top: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--dark-green);
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(9, 37, 28, 0.15);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream-bg);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cream-bg);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--light-peach);
+        }
+
+        .btn-hire {
+            background-color: var(--rust-orange);
+            color: var(--white) !important;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: var(--transition);
+            display: inline-block;
+            border: 2px solid var(--rust-orange);
+        }
+
+        .btn-hire:hover {
+            background-color: transparent;
+            color: var(--light-peach) !important;
+            border-color: var(--light-peach);
+        }
+
+        /* Hamburger Menu (Mobile) */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--cream-bg);
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 6rem;
+            text-align: center;
+        }
+
+        .tagline {
+            display: inline-block;
+            background-color: var(--light-peach);
+            color: var(--dark-green);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--dark-green);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--dark-green);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* Typography & Layout */
+        section { padding: 6rem 0; }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--dark-green);
+        }
+
+        .section-title::after {
+            content: "";
+            height: 3px;
+            flex-grow: 1;
+            background-color: var(--light-peach);
+            border-radius: 5px;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+
+        /* Solid Cards */
+        .card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(9, 37, 28, 0.05);
+            box-shadow: 0 10px 30px rgba(9, 37, 28, 0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(9, 37, 28, 0.1);
+            border-color: var(--light-peach);
+        }
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 0.3rem; 
+            line-height: 1.3;
+            font-weight: 700;
+            color: var(--dark-green);
+        }
+        
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--rust-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            color: var(--dark-green);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            opacity: 0.85;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background-color: var(--light-peach);
+            color: var(--dark-green);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Action Buttons */
+        .card-actions {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: auto;
+            border-top: 2px solid var(--cream-bg);
+            padding-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .btn-link:hover { color: var(--rust-orange); transform: translateX(2px); }
+        .btn-video { color: var(--rust-orange); } 
+
+        /* Video Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(9, 37, 28, 0.8); /* Solid dark overlay, no blur */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--cream-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 95%;
+            max-width: 900px;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .modal-overlay.active .modal-content { 
+            transform: translateY(0) scale(1); 
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--light-peach);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--dark-green);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: var(--rust-orange);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--dark-green);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .video-container video, .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 2rem;
+            background-color: var(--dark-green);
+            color: var(--cream-bg);
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        footer a {
+            color: var(--light-peach);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--rust-orange);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .section-title { font-size: 1.8rem; }
+            .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 4rem 0; }
+            .hero { padding: 6rem 0 4rem; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1rem; padding: 0 1rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            
+            nav { padding: 1rem 1.5rem; border-radius: 20px; }
+            .hamburger { display: flex; }
+            
+            .nav-links {
+                position: absolute;
+                top: 110%;
+                left: 0;
+                right: 0;
+                background-color: var(--dark-green);
+                flex-direction: column;
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(9, 37, 28, 0.2);
+                gap: 1.5rem;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            /* Hamburger Animation */
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+            
+            .card { padding: 1.8rem; }
+            .modal-content { padding: 1.5rem; border-radius: 16px; }
+            
+            footer { border-top-left-radius: 30px; border-top-right-radius: 30px; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="navbar-wrapper">
-        <nav class="navbar">
-            <a href="#" class="logo">Niskara.</a>
-            
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+    <div class="container">
+        <div class="nav-wrapper">
+            <nav>
+                <a href="#" class="logo">Niskara.</a>
+                
+                <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
-            <ul class="nav-links">
-                <li><a href="#freelance">Freelance</a></li>
-                <li><a href="#academic">Academic</a></li>
-                <li><a href="#contact" class="btn-primary" style="padding: 0.6rem 1.5rem; color: white;">Say Hi!</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <header class="hero">
-        <div class="hero-pill">Portfolio Proposal 2026</div>
-        <h1>Designing Logic.<br>Building Beauty.</h1>
-        <p>Hi, I'm Qis! A passionate developer who loves building software. I specialize in turning complex ideas into simple, user-friendly apps that look as good as they work.</p>
-        <a href="#freelance" class="btn btn-primary">Explore My Work</a>
-    </header>
-
-    <section id="freelance" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Independent Work</h2>
-            <p class="section-subtitle">Client projects & freelance creations.</p>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about" onclick="closeNav()">About</a></li>
+                    <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+                    <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+                    <li><a href="mailto:syfqhblqs04@gmail.com" class="btn-hire">Say Hello</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/images/projectPic/wed2.png" alt="Wedding Template">
-                </div>
-                <div class="card-content">
-                    <h3>Digital Wedding Platform</h3>
-                    <p>A fully responsive, bubbly digital invitation that looks great on any device. It features a seamless RSVP system where guest data is automatically synced to a Google Sheet for easy, real-time access and management.
 
-</p>
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>Tailwind CSS</span>
-                        <span>JavaScript</span>
-                        <span>Google Sheets</span>
+        <header class="hero" id="about">
+            <div class="tagline">Seeking Degree Internship</div>
+            <h1>Nur Syafiqah Balqis Binti Sharizal</h1>
+            <p>
+                Bachelor of Computer Science Student (Hons.) specializing in full-stack web development, mobile application engineering, and AI prototyping. I leverage backend logic, machine learning integration, and UI/UX design to build scalable community-focused applications.
+            </p>
+        </header>
+
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Farz Creative</span>
+                        <h3>Web Developer</h3>
                     </div>
-                    <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="card-link">View Live Site ✨</a>
-                </div>
-            </div>
-            
-            <div class="card" style="border: 4px dashed var(--sage); background: transparent; box-shadow: none; align-items: center; justify-content: center; text-align: center;">
-                <div class="card-content">
-                    <h3 style="color: var(--sage);">More Project</h3>
-                    <p>Ready to build something cute and highly functional together!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="academic" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Academic Projects</h2>
-            <p class="section-subtitle">Systems developed during my diploma and degree studies.</p>
-        </div>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/images/projectPic/sapujerr.png" alt="SapuJerr System">
-                </div>
-                <div class="card-content">
-                    <h3>SapuJerr E-Hailing</h3>
-                    <p>A seamless campus e-hailing platform that lets students easily log in, book a ride to their destination, and get matched with a driver for a quick and reliable trip across campus.</p>
+                    <p>Develop professional digital agency websites, full-stack applications, and commercial templates. Recently launched a responsive Digital Wedding Platform featuring a seamless RSVP system synced directly to Google Sheets in real-time.</p>
                     <div class="tags">
-                        <span>Java</span>
-                        <span>MVC</span>
-                        <span>MySQL</span>
+                        <span class="tag">HTML/Tailwind CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Google Sheets API</span>
                     </div>
-                    <a href="https://sapujerr-live-production.up.railway.app/" class="card-link">View Live Stie ✨</a>
+                    <div class="card-actions">
+                        <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                        <a onclick="openModal('wedding-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/images/projectPic/cafeBunga.png" alt="Cafe Bunga">
-                </div>
-                <div class="card-content">
-                    <h3>Cafe Bunga Management</h3>
-                    <p>An all-in-one cafe management tool, end-to-end cafe ordering system featuring secure logins and real-time database management.</p>
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Exiatec Technology Sdn. Bhd</span>
+                        <h3>Software Apprentice Intern</h3>
+                    </div>
+                    <p>Built the eebina.com website utilizing WordPress, customizing themes, plugins, and content to meet functional requirements. Developed prototype mobile applications utilizing Flutter and engineered a basic car movement simulation using C# in Unity.</p>
                     <div class="tags">
-                        <span>PHP</span>
-                        <span>MySQL</span>
-                        <span>XAMPP</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">C# Unity</span>
+                        <span class="tag">WordPress</span>
                     </div>
-                    <a href="https://cafebunga-production-2b8e.up.railway.app/" target="_blank" class="card-link">View Live Site ✨</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section">
-        <div class="contact-area">
-            <h2>Let's create together!</h2>
-            <p>I'm ready for new freelance projects and collaborations. If you need a website that looks as good as it works, let's chat!</p>
-            <a href="mailto:syfqhblqs04@gmail.com" class="btn-cream">Send an Email 💌</a>
-        </div>
-    </section>
+        <section id="projects">
+            <h2 class="section-title">Engineering & Architecture</h2>
+            <div class="grid-3">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Campus Transportation</span>
+                        <h3>SapuJerr e-Hailing Platform</h3>
+                    </div>
+                    <p>Engineered the entire campus e-hailing web ecosystem from end-to-end. Designed the complete architecture connecting university students with drivers, handling secure logins, ride bookings, and real-time destination matching.</p>
+                    <div class="tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Jakarta EE</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Railway</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://sapujerr-live-production.up.railway.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                        <a onclick="openModal('sapujerr-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Restaurant Management</span>
+                        <h3>Cafe Bunga System</h3>
+                    </div>
+                    <p>Built an end-to-end student restaurant ordering web platform featuring secure logins, real-time database management, and an intuitive UI to streamline daily cafe operations.</p>
+                    <div class="tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">HTML/CSS/JS</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://cafebunga-production-2b8e.up.railway.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                        <a onclick="openModal('cafebunga-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Final Year Project (Degree)</span>
+                        <h3>Dynamic Traffic Light Control</h3>
+                    </div>
+                    <p>Developing an optimized traffic system utilizing YOLOv11 for edge-computed vehicle queue estimation, Eclipse SUMO for simulation, TraCI API middleware, and a Flask dashboard.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">YOLOv11</span>
+                        <span class="tag">Eclipse SUMO</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                    <div class="card-actions">
+                        <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Financial Tracker</span>
+                        <h3>TaukeBot AI Assistant</h3>
+                    </div>
+                    <p>Built an automated financial tracker for local hawkers featuring GPT-4o vision for receipt OCR, DALL-E 3 image generation, gamified XP progression, Chart.js analytics, and voice input integration.</p>
+                    <div class="tags">
+                        <span class="tag">GPT-4o Vision</span>
+                        <span class="tag">Chart.js</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="card-actions">
+                        <a onclick="openModal('taukebot-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Web Application</span>
+                        <h3>EmoCare</h3>
+                    </div>
+                    <p>Developed an educator-student emotion tracking web application implementing role-based class filtering and custom aesthetic UI designs to monitor classroom wellness.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <div class="card-actions">
+                        <a onclick="openModal('emocare-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">System Analysis</span>
+                        <h3>SmartER System</h3>
+                    </div>
+                    <p>Authored a comprehensive, short, and easy-to-understand emergency room triage report detailing the system architecture and logic flow for the SmartER system framework.</p>
+                    <div class="tags">
+                        <span class="tag">System Architecture</span>
+                        <span class="tag">Technical Writing</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Business System Spec</span>
+                        <h3>JJE Auto Website</h3>
+                    </div>
+                    <p>Designed a comprehensive web-based inventory management and booking system specification alongside a complete business case study to streamline local operations.</p>
+                    <div class="tags">
+                        <span class="tag">Business Analysis</span>
+                        <span class="tag">System Spec</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2 class="section-title">Competitions & Training</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Security & Technical Training</h3>
+                    <ul style="list-style-position: inside; color: var(--dark-green); font-size: 0.95rem; margin-top: 1rem; line-height: 1.8; opacity: 0.9;">
+                        <li>AI Security Learning Path - TryHackMe (November 2026)</li>
+                        <li>Understanding Digital Transformation - MyDigital Corporation</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Competitions</h3>
+                    <ul style="list-style-position: inside; color: var(--dark-green); font-size: 0.95rem; margin-top: 1rem; line-height: 1.8; opacity: 0.9;">
+                        <li>Participant, Malaysia Data Innovation Talent Datathon (MDIT)</li>
+                        <li>Participant, Program Jaguh Keusahawanan Nasional Siri 4/2026</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End Container -->
 
     <footer>
-        <p>&copy; 2026 Niskara. Coded with ❤️ by Qis.</p>
+        <div class="container">
+            <p style="font-weight: 500; font-size: 1.1rem; margin-bottom: 0.5rem;">&copy; 2026 Niskara. Designed and developed by Nur Syafiqah Balqis.</p>
+            <p style="font-size: 0.9rem; opacity: 0.9;">
+                <a href="https://github.com/syafiqahBalqis" target="_blank">GitHub</a> | 
+                <a href="https://syafiqahbalqis.github.io/" target="_blank">Legacy Portfolio</a> |
+                <a href="https://www.linkedin.com/in/nursyafiqahbalqis04/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
     </footer>
 
+    <!-- Global Video Modal -->
+    <div class="modal-overlay" id="videoModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeModal(event)" aria-label="Close Modal">&times;</button>
+            <h3 id="modalTitle" style="margin-bottom: 0.5rem; font-size: 1.5rem; color: var(--dark-green);">Project Demo</h3>
+            <p style="font-size: 0.95rem; color: var(--rust-orange); font-weight: 600; margin-bottom: 1rem;">Watch the system in action.</p>
+            
+            <div class="video-container">
+                <video id="demoPlayer" controls poster="assets/placeholder.jpg">
+                    <source src="assets/demo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        function closeNav() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+
+        // Video Modal Logic
+        const modal = document.getElementById('videoModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const videoPlayer = document.getElementById('demoPlayer');
+
+        const videoData = {
+            'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'assets/videos/wedding-demo.mp4' },
+            'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'assets/videos/sapujerr-demo.mp4' },
+            'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'assets/videos/cafebunga-demo.mp4' },
+            'traffic-demo': { title: 'Dynamic Traffic Light Control Demo', src: 'assets/videos/traffic-demo.mp4' },
+            'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'assets/videos/taukebot-demo.mp4' },
+            'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'assets/videos/emocare-demo.mp4' }
+        };
+
+        function openModal(projectId) {
+            if(videoData[projectId]) {
+                modalTitle.innerText = videoData[projectId].title;
+                // videoPlayer.src = videoData[projectId].src; 
+            }
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeModal(e) {
+            if (e) e.preventDefault();
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            videoPlayer.pause(); // Stop playing when closed
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
