@@ -26,7 +26,12 @@
         }
 
         body {
+            /* Applied your new background image here */
             background-color: var(--cream-bg);
+            background-image: url('assets/images/backg1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--dark-green);
             line-height: 1.7;
             overflow-x: hidden;
@@ -119,10 +124,39 @@
             transition: var(--transition);
         }
 
-        /* Hero Section */
+        /* Hero Section (Updated layout for photo) */
         .hero {
             padding: 8rem 0 6rem;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 30px;
+            box-shadow: 20px 20px 0px var(--rust-orange);
+            border: 4px solid var(--dark-green);
+            transition: var(--transition);
+        }
+        
+        .hero-image:hover {
+            transform: translate(-10px, -10px);
+            box-shadow: 30px 30px 0px var(--light-peach);
         }
 
         .tagline {
@@ -150,7 +184,7 @@
             font-size: 1.1rem;
             color: var(--dark-green);
             max-width: 800px;
-            margin: 0 auto 2.5rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
         }
 
@@ -180,7 +214,8 @@
 
         /* Solid Cards */
         .card {
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency so background shows through */
+            backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: 20px;
             transition: var(--transition);
@@ -366,6 +401,9 @@
 
         /* Mobile Responsiveness */
         @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 4rem; }
+            .hero-image-container { order: -1; margin-bottom: 2rem; }
+            .hero-image { max-width: 300px; }
             .hero h1 { font-size: 3rem; }
             .section-title { font-size: 1.8rem; }
             .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
@@ -373,7 +411,6 @@
 
         @media (max-width: 768px) {
             section { padding: 4rem 0; }
-            .hero { padding: 6rem 0 4rem; }
             .hero h1 { font-size: 2.4rem; }
             .hero p { font-size: 1rem; padding: 0 1rem; }
             .grid-2 { grid-template-columns: 1fr; }
@@ -439,17 +476,24 @@
         </div>
 
         <header class="hero" id="about">
-            <div class="tagline">Seeking Degree Internship</div>
-            <h1>Nur Syafiqah Balqis Binti Sharizal</h1>
-            <p class="intro">
-                As a <strong>Bachelor of Computer Science (Hons.) student</strong>, I am driven by curiosity 
-                and a passion for exploring the ever-evolving world of technology.
-                I enjoy experimenting with new tools, learning different technologies, 
-                and turning ideas into practical digital solutions from 
-                <strong>web and mobile development</strong> to 
-                <strong>AI-powered applications</strong>. Always eager to take on new 
-                challenges, expand my knowledge, and grow through hands-on experience.
-            </p>
+            <div class="hero-content">
+                <div class="tagline">Seeking Degree Internship</div>
+                <h1>Nur Syafiqah Balqis Binti Sharizal</h1>
+                <p class="intro">
+                    As a <strong>Bachelor of Computer Science (Hons.) student</strong> and a <strong>Web Developer</strong> at Farz Creative, I am driven by curiosity 
+                    and a passion for exploring the ever-evolving world of technology.
+                    I enjoy experimenting with new tools, learning different technologies, 
+                    and turning ideas into practical digital solutions from 
+                    <strong>web and mobile development</strong> to 
+                    <strong>AI-powered applications</strong>. Always eager to take on new 
+                    challenges, expand my knowledge, and grow through hands-on experience.
+                </p>
+                <a href="mailto:syfqhblqs04@gmail.com" class="btn-hire" style="margin-top: 1rem;">Let's Connect</a>
+            </div>
+            
+            <div class="hero-image-container">
+                <img src="assets/images/profile_pic/balqis basco3.png" alt="Nur Syafiqah Balqis" class="hero-image">
+            </div>
         </header>
 
         <section id="experience">
@@ -520,7 +564,7 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://sapujerr-live-production.up.railway.app/" target="_blank" class="btn-link">Live Site ↗</a>
-                       <!-- <a onclick="openModal('sapujerr-demo')" class="btn-link btn-video">Watch Demo 🎬</a> -->
+                        <!-- <a onclick="openModal('sapujerr-demo')" class="btn-link btn-video">Watch Demo 🎬</a> -->
                     </div>
                 </div>
 
@@ -592,6 +636,18 @@
 
                 <div class="card">
                     <div class="card-header">
+                        <span class="card-subtitle">System Analysis</span>
+                        <h3>SmartER System</h3>
+                    </div>
+                    <p>Authored a comprehensive, short, and easy-to-understand emergency room triage report detailing the system architecture and logic flow for the SmartER system framework.</p>
+                    <div class="tags">
+                        <span class="tag">System Architecture</span>
+                        <span class="tag">Technical Writing</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
                         <span class="card-subtitle">Business System Spec</span>
                         <h3>JJE Auto Website</h3>
                     </div>
@@ -599,9 +655,6 @@
                     <div class="tags">
                         <span class="tag">Business Analysis</span>
                         <span class="tag">System Spec</span>
-                    </div>
-                    <div class="card-actions">
-                        <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
                     </div>
                 </div>
 
@@ -683,7 +736,8 @@
             
             // YouTube Example (Notice the /embed/ URL format!)
             'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'https://www.youtube.com/embed/E0EMJjinqAg' },
-            'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'https://youtu.be/YMVKTD5yjZI?si=Q0RW8Ajy-OcTjD0S' }        }; 
+            'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'https://www.youtube.com/embed/YMVKTD5yjZI' }
+        }; 
 
         function openModal(projectId) {
             if(videoData[projectId]) {
