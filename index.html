@@ -149,7 +149,7 @@
         .hero p {
             font-size: 1.1rem;
             color: var(--dark-green);
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto 2.5rem;
             opacity: 0.9;
         }
@@ -273,7 +273,7 @@
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(9, 37, 28, 0.8); /* Solid dark overlay, no blur */
+            background: rgba(9, 37, 28, 0.8); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -441,8 +441,14 @@
         <header class="hero" id="about">
             <div class="tagline">Seeking Degree Internship</div>
             <h1>Nur Syafiqah Balqis Binti Sharizal</h1>
-            <p>
-                Bachelor of Computer Science Student (Hons.) specializing in full-stack web development, mobile application engineering, and AI prototyping. I leverage backend logic, machine learning integration, and UI/UX design to build scalable community-focused applications.
+            <p class="intro">
+                As a <strong>Bachelor of Computer Science (Hons.) student</strong>, I am driven by curiosity 
+                and a passion for exploring the ever-evolving world of technology.
+                I enjoy experimenting with new tools, learning different technologies, 
+                and turning ideas into practical digital solutions from 
+                <strong>web and mobile development</strong> to 
+                <strong>AI-powered applications</strong>. Always eager to take on new 
+                challenges, expand my knowledge, and grow through hands-on experience.
             </p>
         </header>
 
@@ -454,15 +460,14 @@
                         <span class="card-subtitle">Farz Creative</span>
                         <h3>Web Developer</h3>
                     </div>
-                    <p>Develop professional digital agency websites, full-stack applications, and commercial templates. Recently launched a responsive Digital Wedding Platform featuring a seamless RSVP system synced directly to Google Sheets in real-time.</p>
+                    <p>Develop professional digital agency websites, full-stack applications, and commercial templates. Engineered the primary Farz Creative corporate website to showcase the team's digital services, custom digital invitations, and brand redesign portfolios.</p>
                     <div class="tags">
-                        <span class="tag">HTML/Tailwind CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Google Sheets API</span>
+                        <span class="tag">Full-Stack Development</span>
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">Web Architecture</span>
                     </div>
                     <div class="card-actions">
-                        <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="btn-link">Live Site ↗</a>
-                        <a onclick="openModal('wedding-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                        <a href="https://farzcreative.com/" target="_blank" class="btn-link">Farz Website ↗</a>
                     </div>
                 </div>
 
@@ -485,6 +490,23 @@
             <h2 class="section-title">Engineering & Architecture</h2>
             <div class="grid-3">
                 
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Commercial Template</span>
+                        <h3>Digital Wedding Platform</h3>
+                    </div>
+                    <p>Designed and launched a fully responsive digital wedding invitation featuring a seamless RSVP system. Guest data is automatically synced to Google Sheets in real-time for easy management.</p>
+                    <div class="tags">
+                        <span class="tag">HTML/Tailwind CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Google Sheets API</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                        <a onclick="openModal('wedding-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Campus Transportation</span>
@@ -523,14 +545,14 @@
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Final Year Project (Degree)</span>
-                        <h3>Dynamic Traffic Light Control</h3>
+                        <h3>Smart V2I Traffic Signal Management System</h3>
                     </div>
-                    <p>Developing an optimized traffic system utilizing YOLOv11 for edge-computed vehicle queue estimation, Eclipse SUMO for simulation, TraCI API middleware, and a Flask dashboard.</p>
+                    <p>Developed an optimized cyber-physical intelligent transportation system (ITS) utilizing YOLOv11 for edge-computed vehicle queue estimation, Eclipse SUMO for simulation, and TraCI API middleware. Features a dynamic Longest Queue First (LQF) adaptive control architecture with fail-safe protocols.</p>
                     <div class="tags">
                         <span class="tag">Python</span>
                         <span class="tag">YOLOv11</span>
                         <span class="tag">Eclipse SUMO</span>
-                        <span class="tag">Flask</span>
+                        <span class="tag">TraCI API</span>
                     </div>
                     <div class="card-actions">
                         <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
@@ -668,7 +690,7 @@
             'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'assets/videos/wedding-demo.mp4' },
             'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'assets/videos/sapujerr-demo.mp4' },
             'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'assets/videos/cafebunga-demo.mp4' },
-            'traffic-demo': { title: 'Dynamic Traffic Light Control Demo', src: 'assets/videos/traffic-demo.mp4' },
+            'traffic-demo': { title: 'Smart V2I Traffic Signal Management System Demo', src: 'assets/videos/traffic-demo.mp4' },
             'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'assets/videos/taukebot-demo.mp4' },
             'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'assets/videos/emocare-demo.mp4' }
         };
