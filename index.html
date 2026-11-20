@@ -26,7 +26,6 @@
         }
 
         body {
-            /* Applied your new background image here */
             background-color: var(--cream-bg);
             background-image: url('assets/images/backg1.png');
             background-size: cover;
@@ -97,12 +96,18 @@
             transition: var(--transition);
             display: inline-block;
             border: 2px solid var(--rust-orange);
+            text-decoration: none;
         }
 
         .btn-hire:hover {
             background-color: transparent;
             color: var(--light-peach) !important;
             border-color: var(--light-peach);
+        }
+
+        .hero .btn-hire:hover {
+            color: var(--rust-orange) !important;
+            border-color: var(--rust-orange);
         }
 
         /* Hamburger Menu (Mobile) */
@@ -124,7 +129,7 @@
             transition: var(--transition);
         }
 
-        /* Hero Section (Updated layout for photo) */
+        /* Hero Section */
         .hero {
             padding: 8rem 0 6rem;
             display: flex;
@@ -209,12 +214,13 @@
             border-radius: 5px;
         }
 
+        .grid-1 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
         /* Solid Cards */
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency so background shows through */
+            background-color: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             padding: 2.5rem;
             border-radius: 20px;
@@ -304,7 +310,7 @@
         .btn-link:hover { color: var(--rust-orange); transform: translateX(2px); }
         .btn-video { color: var(--rust-orange); } 
 
-        /* Video Modal */
+        /* Shared Modal Styles */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -355,6 +361,7 @@
             cursor: pointer;
             color: var(--dark-green);
             transition: var(--transition);
+            z-index: 10;
         }
 
         .close-modal:hover {
@@ -376,6 +383,73 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        /* Photo Gallery Modal */
+        .gallery-viewport {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--dark-green);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-viewport img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .gallery-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(243, 210, 175, 0.9);
+            color: var(--dark-green);
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .gallery-nav-btn:hover {
+            background: var(--rust-orange);
+            color: var(--white);
+        }
+
+        .gallery-prev { left: 1rem; }
+        .gallery-next { right: 1rem; }
+
+        .gallery-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-green);
+        }
+
+        .gallery-counter {
+            background: var(--light-peach);
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
 
         footer {
@@ -448,6 +522,7 @@
             
             .card { padding: 1.8rem; }
             .modal-content { padding: 1.5rem; border-radius: 16px; }
+            .gallery-nav-btn { width: 34px; height: 34px; font-size: 1rem; }
             
             footer { border-top-left-radius: 30px; border-top-right-radius: 30px; }
         }
@@ -494,23 +569,7 @@
 
         <section id="experience">
             <h2 class="section-title">Professional Experience</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-subtitle">Farz Creative</span>
-                        <h3>Web Developer</h3>
-                    </div>
-                    <p>Develop professional digital agency websites, full-stack applications, and commercial templates. Engineered the primary Farz Creative corporate website to showcase the team's digital services, custom digital invitations, and brand redesign portfolios.</p>
-                    <div class="tags">
-                        <span class="tag">Full-Stack Development</span>
-                        <span class="tag">UI/UX Design</span>
-                        <span class="tag">Web Architecture</span>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://farzcreative.com/" target="_blank" class="btn-link">Farz Website ↗</a>
-                    </div>
-                </div>
-
+            <div class="grid-1">
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Exiatec Technology Sdn. Bhd</span>
@@ -529,23 +588,27 @@
         <section id="projects">
             <h2 class="section-title">Engineering & Architecture</h2>
             <div class="grid-3">
-                
+
+                <!-- 1. Traffic Light -->
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-subtitle">Commercial Template</span>
-                        <h3>Digital Wedding Platform</h3>
+                        <span class="card-subtitle">Final Year Project (Degree)</span>
+                        <h3>Smart V2I Traffic Signal Management System</h3>
                     </div>
-                    <p>Designed and launched a fully responsive digital wedding invitation featuring a seamless RSVP system. Guest data is automatically synced to Google Sheets in real-time for easy management.</p>
+                    <p>Developed an optimized cyber-physical intelligent transportation system (ITS) utilizing YOLOv11 for edge-computed vehicle queue estimation, Eclipse SUMO for simulation, and TraCI API middleware. Features a dynamic Longest Queue First (LQF) adaptive control architecture with fail-safe protocols.</p>
                     <div class="tags">
-                        <span class="tag">HTML/Tailwind CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Google Sheets API</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">YOLOv11</span>
+                        <span class="tag">Eclipse SUMO</span>
+                        <span class="tag">TraCI API</span>
                     </div>
                     <div class="card-actions">
-                        <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                        <a onclick="openGallery('traffic-gallery')" class="btn-link">View Photos 🖼️</a>
+                        <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
                     </div>
                 </div>
 
+                <!-- 2. SapuJerr -->
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Campus Transportation</span>
@@ -560,10 +623,10 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://sapujerr-live-production.up.railway.app/" target="_blank" class="btn-link">Live Site ↗</a>
-                        <!-- <a onclick="openModal('sapujerr-demo')" class="btn-link btn-video">Watch Demo 🎬</a> -->
                     </div>
                 </div>
 
+                <!-- 3. Cafe Bunga -->
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Restaurant Management</span>
@@ -577,27 +640,10 @@
                     </div>
                     <div class="card-actions">
                         <a href="https://cafebunga-production-2b8e.up.railway.app/" target="_blank" class="btn-link">Live Site ↗</a>
-                        <!--<a onclick="openModal('cafebunga-demo')" class="btn-link btn-video">Watch Demo 🎬</a>-->
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-subtitle">Final Year Project (Degree)</span>
-                        <h3>Smart V2I Traffic Signal Management System</h3>
-                    </div>
-                    <p>Developed an optimized cyber-physical intelligent transportation system (ITS) utilizing YOLOv11 for edge-computed vehicle queue estimation, Eclipse SUMO for simulation, and TraCI API middleware. Features a dynamic Longest Queue First (LQF) adaptive control architecture with fail-safe protocols.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">YOLOv11</span>
-                        <span class="tag">Eclipse SUMO</span>
-                        <span class="tag">TraCI API</span>
-                    </div>
-                    <div class="card-actions">
-                        <a onclick="openModal('traffic-demo')" class="btn-link btn-video">Watch Demo 🎬</a>
-                    </div>
-                </div>
-
+                <!-- 4. TaukeBot -->
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Financial Tracker</span>
@@ -614,6 +660,7 @@
                     </div>
                 </div>
 
+                <!-- 5. EmoCare -->
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Web Application</span>
@@ -630,6 +677,41 @@
                     </div>
                 </div>
 
+                <!-- 6. Digital Wedding Platform -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Commercial Template</span>
+                        <h3>Digital Wedding Platform</h3>
+                    </div>
+                    <p>Designed and launched a fully responsive digital wedding invitation featuring a seamless RSVP system. Guest data is automatically synced to Google Sheets in real-time for easy management.</p>
+                    <div class="tags">
+                        <span class="tag">HTML/Tailwind CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Google Sheets API</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wedding-template-01-cyan.vercel.app/" target="_blank" class="btn-link">Live Site ↗</a>
+                    </div>
+                </div>
+
+                <!-- 7. Farz Creative -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-subtitle">Digital Agency Website</span>
+                        <h3>Farz Creative Website</h3>
+                    </div>
+                    <p>Engineered the primary Farz Creative corporate website to showcase digital agency services, custom digital invitations, full-stack web solutions, and brand redesign portfolios with a responsive, conversion-focused interface.</p>
+                    <div class="tags">
+                        <span class="tag">Full-Stack Development</span>
+                        <span class="tag">UI/UX Design</span>
+                        <span class="tag">Web Architecture</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://farzcreative.com/" target="_blank" class="btn-link">Live Site ↗</a>
+                    </div>
+                </div>
+
+                <!-- 8. JJE Auto -->
                 <div class="card">
                     <div class="card-header">
                         <span class="card-subtitle">Business System Spec</span>
@@ -667,7 +749,7 @@
                 </div>
             </div>
         </section>
-    </div> <!-- End Container -->
+    </div>
 
     <footer>
         <div class="container">
@@ -688,8 +770,27 @@
             <p style="font-size: 0.95rem; color: var(--rust-orange); font-weight: 600; margin-bottom: 1rem;">Watch the system in action.</p>
             
             <div class="video-container">
-                <!-- Use an iframe for BOTH local videos and YouTube videos -->
                 <iframe id="demoPlayer" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Photo Gallery Modal -->
+    <div class="modal-overlay" id="galleryModal" onclick="closeGallery(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeGallery(event)" aria-label="Close Gallery">&times;</button>
+            <h3 id="galleryTitle" style="margin-bottom: 0.3rem; font-size: 1.5rem; color: var(--dark-green);">Project Screenshots</h3>
+            <p style="font-size: 0.9rem; color: var(--rust-orange); font-weight: 600;">Website & interface preview</p>
+
+            <div class="gallery-viewport">
+                <button class="gallery-nav-btn gallery-prev" onclick="changeSlide(-1)" aria-label="Previous image">&#10094;</button>
+                <img id="galleryImage" src="" alt="Project screenshot">
+                <button class="gallery-nav-btn gallery-next" onclick="changeSlide(1)" aria-label="Next image">&#10095;</button>
+            </div>
+
+            <div class="gallery-footer">
+                <span id="galleryCaption"></span>
+                <span class="gallery-counter" id="galleryCounter">1 / 1</span>
             </div>
         </div>
     </div>
@@ -715,20 +816,17 @@
         const videoPlayer = document.getElementById('demoPlayer');
 
         const videoData = {
-            // Local MP4 Examples
             'wedding-demo': { title: 'Digital Wedding Platform Demo', src: 'assets/videos/wedding-demo.mp4' },
             'sapujerr-demo': { title: 'SapuJerr Platform Demo', src: 'assets/videos/sapujerr-demo.mp4' },
             'cafebunga-demo': { title: 'Cafe Bunga System Demo', src: 'assets/videos/cafebunga-demo.mp4' },
             'traffic-demo': { title: 'Smart V2I Traffic Signal Management System Demo', src: 'assets/videos/traffic-demo.mp4' },
             'jje-auto-demo': { title: 'JJE Auto System Demo', src: 'assets/videos/jje-auto-demo.mp4' },
-            
-            // YouTube Example (Notice the /embed/ URL format!)
             'taukebot-demo': { title: 'TaukeBot AI Assistant Demo', src: 'https://www.youtube.com/embed/E0EMJjinqAg' },
             'emocare-demo': { title: 'EmoCare Web Application Demo', src: 'https://www.youtube.com/embed/YMVKTD5yjZI' },
         }; 
 
         function openModal(projectId) {
-            if(videoData[projectId]) {
+            if (videoData[projectId]) {
                 modalTitle.innerText = videoData[projectId].title;
                 videoPlayer.src = videoData[projectId].src;
             }
@@ -740,14 +838,69 @@
             if (e) e.preventDefault();
             modal.classList.remove('active');
             document.body.style.overflow = '';
-            // For iframes, clearing the src is how you stop the video from playing in the background
             videoPlayer.src = ''; 
         }
 
-        // Close modal on Escape key
+        // Photo Gallery Modal Logic
+        const galleryModal = document.getElementById('galleryModal');
+        const galleryTitle = document.getElementById('galleryTitle');
+        const galleryImage = document.getElementById('galleryImage');
+        const galleryCaption = document.getElementById('galleryCaption');
+        const galleryCounter = document.getElementById('galleryCounter');
+
+        const galleryData = {
+            'traffic-gallery': {
+                title: 'Smart V2I Traffic Signal Management System',
+                photos: [
+                    { src: 'assets/images/projectPic/traffic_light/dashboard1.png', caption: 'Traffic Control Dashboard — Overview 1' },
+                    { src: 'assets/images/projectPic/traffic_light/dashboard2.png', caption: 'Traffic Control Dashboard — Overview 2' },
+                    { src: 'assets/images/projectPic/traffic_light/dashboard3.png', caption: 'Traffic Control Dashboard — Overview 3' }
+                ]
+            }
+        };
+
+        let currentGallery = [];
+        let currentSlide = 0;
+
+        function openGallery(galleryId) {
+            if (!galleryData[galleryId]) return;
+            galleryTitle.innerText = galleryData[galleryId].title;
+            currentGallery = galleryData[galleryId].photos;
+            currentSlide = 0;
+            updateGalleryView();
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateGalleryView() {
+            const item = currentGallery[currentSlide];
+            galleryImage.src = item.src;
+            galleryImage.alt = item.caption;
+            galleryCaption.innerText = item.caption;
+            galleryCounter.innerText = `${currentSlide + 1} / ${currentGallery.length}`;
+        }
+
+        function changeSlide(direction) {
+            if (!currentGallery.length) return;
+            currentSlide = (currentSlide + direction + currentGallery.length) % currentGallery.length;
+            updateGalleryView();
+        }
+
+        function closeGallery(e) {
+            if (e) e.preventDefault();
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Keyboard Controls for Modals
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
+            if (e.key === 'Escape') {
+                if (modal.classList.contains('active')) closeModal();
+                if (galleryModal.classList.contains('active')) closeGallery();
+            }
+            if (galleryModal.classList.contains('active')) {
+                if (e.key === 'ArrowRight') changeSlide(1);
+                if (e.key === 'ArrowLeft') changeSlide(-1);
             }
         });
     </script>
